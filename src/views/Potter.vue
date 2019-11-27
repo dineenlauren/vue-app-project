@@ -73,7 +73,6 @@ export default {
   },
   methods: {
     getHouseMembers: function() {
-      console.log("Searching API results");
       this.showSpinner = true;
       pAPI
         .get("characters/", {
@@ -85,7 +84,6 @@ export default {
           this.showSpinner = false;
           this.newStyle = this.query;
           this.results = response.data;
-          console.log("Turning off showSpinner");
         })
         .catch((this.showSpinner = false));
     }
