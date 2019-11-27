@@ -23,7 +23,9 @@
       <!-- RESULTS CONTAINER -->
       <div class="results-container">
         <spinner v-if="showSpinner"></spinner>
-        <h2 v-if="results && results.length > 0">{{ results.length }} Results Found</h2>
+        <h2 v-if="results && results.length > 0">
+          {{ results.length }} Results Found
+        </h2>
         <ul v-if="results && results.length > 0" :class="newStyle">
           <transition-group name="bounce" tag="div" appear>
             <li v-for="result in results" class="item" v-bind:key="result.name">

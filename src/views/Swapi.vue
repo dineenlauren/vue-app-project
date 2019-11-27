@@ -13,12 +13,16 @@
       <!-- RESULTS CONTAINER -->
       <div class="results-container">
         <spinner v-if="showSpinner"></spinner>
-        <h2
-          v-if="results.results && results.results.length > 0"
-        >{{ results.results.length }} Results Found</h2>
+        <h2 v-if="results.results && results.results.length > 0">
+          {{ results.results.length }} Results Found
+        </h2>
         <ul v-if="results.results && results.results.length > 0" class="card">
           <transition-group name="zoom" tag="div" appear>
-            <li v-for="person in results.results" class="item" v-bind:key="person.name">
+            <li
+              v-for="person in results.results"
+              class="item"
+              v-bind:key="person.name"
+            >
               <p class="result-word">{{ person.name }}</p>
               <p class="attribute">Eye Color: {{ person.eye_color }}</p>
               <p class="attribute">Birth Year: {{ person.birth_year }}</p>
@@ -27,7 +31,10 @@
           </transition-group>
         </ul>
 
-        <div v-else-if="results.results && results.results.length === 0" class="no-results">
+        <div
+          v-else-if="results.results && results.results.length === 0"
+          class="no-results"
+        >
           <h2>No Results Found</h2>
           <p>Please adjust your search.</p>
         </div>
